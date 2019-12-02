@@ -8,10 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    
-    let errorMessage = "Please, complete all the fields"
-    let validateErrorMessage = "Invalid username/password"
+class LoginViewController: BaseViewController {
    
     @IBOutlet weak var loginButtonView: UIButton!
     @IBOutlet weak var signUpButtonView: UIButton!
@@ -33,28 +30,21 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInPressed(_ sender: UIButton) {
         errorLabel.isHidden = true
-        
-        let user = User()
-        user.username = usernameTextView.text ?? ""
-        user.password = passwordTextView.text ?? ""
-        
-        if user.username == "" || user.password == "" {
-            setErrorMessage(errorText: errorMessage)
+                
+        if let username = usernameTextView.text, let password = passwordTextView.text, username != "", password != "" {
+            
+            let loginVM = LoginViewModel(username, password)
+                
+            do {
+                try loginVM.LoginUser()
+                performSegue(withIdentifier: "GoToHome", sender: self)
+            } catch {
+                setErrorMessage(errorLabel: errorLabel, errorText: K.AuthConstants.validateErrorMessage)
+            }
+        } else {
+            setErrorMessage(errorLabel: errorLabel, errorText: K.AuthConstants.fieldEmptyErrorMessage)
             return
         }
-        
-        let loginVM = LoginViewModelFromUser(withUser: user)
-        
-        if loginVM.validateUserData() {
-            performSegue(withIdentifier: "GoToHome", sender: self)
-        } else {
-            setErrorMessage(errorText: validateErrorMessage)
-        }
-    }
-    
-    func setErrorMessage(errorText: String) {
-        errorLabel.text = errorText
-        errorLabel.isHidden = false
     }
 }
 

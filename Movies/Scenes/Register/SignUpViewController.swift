@@ -8,7 +8,9 @@
 
 import  UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: BaseViewController {
+    
+    
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
@@ -17,6 +19,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField2: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
+    @IBOutlet weak var errorlabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,33 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func cancelPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        goBackWithAnimation()
+    }
+    
+    @IBAction func registerPressed(_ sender: UIButton) {
+        errorlabel.isHidden = true
+        
+        if let username = usernameTextField.text,
+           let password = passwordTextField.text,
+           let name = nameTextField.text,
+           let email = emailTextField.text,
+           let password2 = passwordTextField2.text,
+            username != "", password != "", name != "", email != "", password2 != "" {
+            
+            if password != password2 {
+                setErrorMessage(errorLabel: errorlabel, errorText: K.AuthConstants.passwordDoesNotMatchErrorMessage)
+                return
+            }
+            
+            let signUpVM = SignUpViewModel(username: username, password: password, name: name, email: email)
+            if signUpVM.saveUserData() {
+                goBackWithAnimation()
+            } else {
+                setErrorMessage(errorLabel: errorlabel, errorText: K.AuthConstants.registerErrorMessage)
+            }
+            
+        } else {
+            setErrorMessage(errorLabel: errorlabel, errorText: K.AuthConstants.fieldEmptyErrorMessage)
+        }
     }
 }
