@@ -13,7 +13,7 @@ protocol LoginViewModelProtocol {
     var username: String { get }
     var password: String { get }
     
-    func LoginUser() throws
+    func loginUser() -> Result<(), AuthError>
     func getActiveUserData()
 }
 
@@ -24,14 +24,15 @@ class LoginViewModel: LoginViewModelProtocol {
     var username: String
     var password: String
     
-    let authService: AuthService
-    
     // Protocol functions
-    func LoginUser() throws {
-        do {
-            _ = try authService.loginWithResult(username: username, password: password).get()
-        } catch {
-            throw error
+    func loginUser() -> Result<(), AuthError> {
+        
+        let result = AuthService.loginWithResult(username: username, password: password)
+        switch result {
+            case .success():
+                return .success(())
+            case .failure(let error):
+                return .failure(error)
         }
     }
     
@@ -43,8 +44,6 @@ class LoginViewModel: LoginViewModelProtocol {
     init(_ username: String, _ password: String) {
         self.username = username
         self.password = password
-        
-        authService = AuthService()
     }
     
 }

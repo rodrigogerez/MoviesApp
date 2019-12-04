@@ -10,8 +10,6 @@ import  UIKit
 
 class SignUpViewController: BaseViewController {
     
-    
-    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,6 +19,8 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var errorlabel: UILabel!
+    
+    var signUpVM: SignUpViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +52,15 @@ class SignUpViewController: BaseViewController {
                 return
             }
             
-            let signUpVM = SignUpViewModel(username: username, password: password, name: name, email: email)
-            if signUpVM.saveUserData() {
-                goBackWithAnimation()
-            } else {
-                setErrorMessage(errorLabel: errorlabel, errorText: K.AuthConstants.registerErrorMessage)
-            }
+            signUpVM = SignUpViewModel(username: username, password: password, name: name, email: email)
             
+            let result = signUpVM.saveUserData()
+            switch result {
+            case .success():
+                NavigationService.changeRoot(withIdentifier: "navController")
+            case .failure(let error):
+                setErrorMessage(errorLabel: errorlabel, errorText: error.localizedDescription)
+            }
         } else {
             setErrorMessage(errorLabel: errorlabel, errorText: K.AuthConstants.fieldEmptyErrorMessage)
         }

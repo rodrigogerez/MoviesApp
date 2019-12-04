@@ -390,7 +390,8 @@
         <!--Navigation Controller-->
         <scene sceneID="zgx-YP-yq0">
             <objects>
-                <navigationController id="4hh-sk-WR5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" id="4hh-sk-WR5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CH5-UZ-QRg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4jz-25-IoU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>

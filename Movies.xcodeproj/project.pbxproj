@@ -20,6 +20,7 @@
 		D1E7F3DB2395B97600929253 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3DA2395B97600929253 /* SignUpViewModel.swift */; };
 		D1E7F3DE2395BFA500929253 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3DD2395BFA500929253 /* BaseViewController.swift */; };
 		D1E7F3E12395C0BF00929253 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E02395C0BF00929253 /* K.swift */; };
+		D1E7F3E32395CBB100929253 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E22395CBB100929253 /* NavigationService.swift */; };
 		D1F3FE60239587FF002AD44D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5D239587FF002AD44D /* RealmSwift.framework */; };
 		D1F3FE61239587FF002AD44D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5D239587FF002AD44D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1F3FE62239587FF002AD44D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5E239587FF002AD44D /* Alamofire.framework */; };
@@ -74,6 +75,7 @@
 		D1E7F3DA2395B97600929253 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		D1E7F3DD2395BFA500929253 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D1E7F3E02395C0BF00929253 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		D1E7F3E22395CBB100929253 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		D1F3FE5D239587FF002AD44D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		D1F3FE5E239587FF002AD44D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D1F3FE5F239587FF002AD44D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FCF5DD238F333D00373ECA /* AuthService.swift */,
+				D1E7F3E22395CBB100929253 /* NavigationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,8 +215,8 @@
 		D1FCF5E0238F703400373ECA /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				D1FCF5E1238F708600373ECA /* SignUpViewController.swift */,
 				D1E7F3DA2395B97600929253 /* SignUpViewModel.swift */,
+				D1FCF5E1238F708600373ECA /* SignUpViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				D1FCF5E2238F708600373ECA /* SignUpViewController.swift in Sources */,
 				D1E7F3DE2395BFA500929253 /* BaseViewController.swift in Sources */,
 				D1C25F4F238C600B00048B90 /* AppDelegate.swift in Sources */,
+				D1E7F3E32395CBB100929253 /* NavigationService.swift in Sources */,
 				D1C25F73238D93D600048B90 /* User.swift in Sources */,
 				D1E7F3E12395C0BF00929253 /* K.swift in Sources */,
 				D1C25F79238DA54000048B90 /* HomeViewController.swift in Sources */,
