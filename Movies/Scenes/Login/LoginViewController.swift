@@ -17,6 +17,8 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    var loginVM: LoginViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,14 +35,16 @@ class LoginViewController: BaseViewController {
                 
         if let username = usernameTextView.text, let password = passwordTextView.text, username != "", password != "" {
             
-            let loginVM = LoginViewModel(username, password)
+            loginVM = LoginViewModel(username, password)
                 
-            do {
-                try loginVM.LoginUser()
-                performSegue(withIdentifier: "GoToHome", sender: self)
-            } catch {
-                setErrorMessage(errorLabel: errorLabel, errorText: K.AuthConstants.validateErrorMessage)
+            let result = loginVM.loginUser()
+            switch result {
+            case .success(()):
+                NavigationService.changeRoot(withIdentifier: "navController")
+            case .failure(let error):
+                setErrorMessage(errorLabel: errorLabel, errorText: error.localizedDescription)
             }
+            
         } else {
             setErrorMessage(errorLabel: errorLabel, errorText: K.AuthConstants.fieldEmptyErrorMessage)
             return

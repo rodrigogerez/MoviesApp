@@ -14,6 +14,7 @@ struct K {
         static let validateErrorMessage = "Invalid username/password"
         static let registerErrorMessage = "Has been an unespected error. Please, try again"
         static let passwordDoesNotMatchErrorMessage = "Both passwords must be the same"
+        static let userAlreadyExistErrorMessage = "The username is already registered. Please, try another one"
     }
     
 }

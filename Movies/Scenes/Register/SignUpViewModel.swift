@@ -12,24 +12,19 @@ import Foundation
 protocol SignUpViewModelProtocol {
     var user: User { get }
     
-    func saveUserData() -> Bool
+    func saveUserData() -> Result<(), AuthError>
 }
 
 // MARK: SignUpViewModel
 class SignUpViewModel: SignUpViewModelProtocol {
     var user: User
     
-    let authService: AuthService
-    
-    func saveUserData() -> Bool {
-        do {
-            try authService.register(user: user)
-            
-            return true
-        } catch {
-            return false
+    func saveUserData() -> Result<(), AuthError> {
+        guard let _ = try? AuthService.register(user: user) else {
+            return .failure(.ExistentUser)
         }
         
+        return .success(())
     }
     
     // Init
@@ -40,7 +35,5 @@ class SignUpViewModel: SignUpViewModelProtocol {
         self.user.password = password
         self.user.name = name
         self.user.email = email
-        
-        authService = AuthService()
     }
 }
