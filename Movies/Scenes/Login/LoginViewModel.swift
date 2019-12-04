@@ -8,13 +8,42 @@
 
 import Foundation
 
-protocol LoginViewModel {
+// MARK: LoginViewModelProtocol
+protocol LoginViewModelProtocol {
     var username: String { get }
     var password: String { get }
-    var name: String { get }
-    var email: String { get }
     
-    func validateUserData() -> Bool
-    func saveUserData(user: User)
+    func loginUser() -> Result<(), AuthError>
     func getActiveUserData()
+}
+
+// MARK: LoginViewModel
+class LoginViewModel: LoginViewModelProtocol {
+        
+    // LoginViewModel protocol properties
+    var username: String
+    var password: String
+    
+    // Protocol functions
+    func loginUser() -> Result<(), AuthError> {
+        
+        let result = AuthService.loginWithResult(username: username, password: password)
+        switch result {
+            case .success():
+                return .success(())
+            case .failure(let error):
+                return .failure(error)
+        }
+    }
+    
+    func getActiveUserData() {
+        
+    }
+    
+    // Init
+    init(_ username: String, _ password: String) {
+        self.username = username
+        self.password = password
+    }
+    
 }

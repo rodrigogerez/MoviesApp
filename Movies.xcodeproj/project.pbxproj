@@ -15,16 +15,18 @@
 		D1C25F64238C602600048B90 /* MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F63238C602600048B90 /* MoviesTests.swift */; };
 		D1C25F73238D93D600048B90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F72238D93D600048B90 /* User.swift */; };
 		D1C25F75238D98B600048B90 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F74238D98B600048B90 /* LoginViewModel.swift */; };
-		D1C25F77238D997700048B90 /* LoginViewModelFromUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F76238D997700048B90 /* LoginViewModelFromUser.swift */; };
 		D1C25F79238DA54000048B90 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F78238DA54000048B90 /* HomeViewController.swift */; };
 		D1C25F84238EE3BB00048B90 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F83238EE3BB00048B90 /* Movie.swift */; };
+		D1E7F3DB2395B97600929253 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3DA2395B97600929253 /* SignUpViewModel.swift */; };
+		D1E7F3DE2395BFA500929253 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3DD2395BFA500929253 /* BaseViewController.swift */; };
+		D1E7F3E12395C0BF00929253 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E02395C0BF00929253 /* K.swift */; };
+		D1E7F3E32395CBB100929253 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E22395CBB100929253 /* NavigationService.swift */; };
 		D1F3FE60239587FF002AD44D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5D239587FF002AD44D /* RealmSwift.framework */; };
 		D1F3FE61239587FF002AD44D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5D239587FF002AD44D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1F3FE62239587FF002AD44D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5E239587FF002AD44D /* Alamofire.framework */; };
 		D1F3FE63239587FF002AD44D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5E239587FF002AD44D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1F3FE64239587FF002AD44D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5F239587FF002AD44D /* Realm.framework */; };
 		D1F3FE65239587FF002AD44D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5F239587FF002AD44D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D1FCF5DC238F32C000373ECA /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FCF5DB238F32C000373ECA /* AuthServiceProtocol.swift */; };
 		D1FCF5DE238F333D00373ECA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FCF5DD238F333D00373ECA /* AuthService.swift */; };
 		D1FCF5E2238F708600373ECA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FCF5E1238F708600373ECA /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -68,13 +70,15 @@
 		D1C25F65238C602600048B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C25F72238D93D600048B90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1C25F74238D98B600048B90 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		D1C25F76238D997700048B90 /* LoginViewModelFromUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelFromUser.swift; sourceTree = "<group>"; };
 		D1C25F78238DA54000048B90 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D1C25F83238EE3BB00048B90 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		D1E7F3DA2395B97600929253 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D1E7F3DD2395BFA500929253 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D1E7F3E02395C0BF00929253 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		D1E7F3E22395CBB100929253 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		D1F3FE5D239587FF002AD44D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		D1F3FE5E239587FF002AD44D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D1F3FE5F239587FF002AD44D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		D1FCF5DB238F32C000373ECA /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		D1FCF5DD238F333D00373ECA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D1FCF5E1238F708600373ECA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +126,7 @@
 		D1C25F4D238C600B00048B90 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				D1E7F3DF2395C0A900929253 /* Constants */,
 				D1C25F82238EDB9D00048B90 /* Services */,
 				D1C25F71238D93A700048B90 /* Scenes */,
 				D1C25F70238C605900048B90 /* Models */,
@@ -154,10 +159,11 @@
 		D1C25F71238D93A700048B90 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D1E7F3DC2395B9F500929253 /* Home */,
 				D1FCF5E0238F703400373ECA /* Register */,
 				D1FCF5DF238F428A00373ECA /* Login */,
 				D1C25F52238C600B00048B90 /* Main.storyboard */,
-				D1C25F78238DA54000048B90 /* HomeViewController.swift */,
+				D1E7F3DD2395BFA500929253 /* BaseViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -175,16 +181,31 @@
 		D1C25F82238EDB9D00048B90 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D1FCF5DB238F32C000373ECA /* AuthServiceProtocol.swift */,
 				D1FCF5DD238F333D00373ECA /* AuthService.swift */,
+				D1E7F3E22395CBB100929253 /* NavigationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D1E7F3DC2395B9F500929253 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D1C25F78238DA54000048B90 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D1E7F3DF2395C0A900929253 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D1E7F3E02395C0BF00929253 /* K.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		D1FCF5DF238F428A00373ECA /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D1C25F76238D997700048B90 /* LoginViewModelFromUser.swift */,
 				D1C25F74238D98B600048B90 /* LoginViewModel.swift */,
 				D1C25F50238C600B00048B90 /* LoginViewController.swift */,
 			);
@@ -194,6 +215,7 @@
 		D1FCF5E0238F703400373ECA /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				D1E7F3DA2395B97600929253 /* SignUpViewModel.swift */,
 				D1FCF5E1238F708600373ECA /* SignUpViewController.swift */,
 			);
 			path = Register;
@@ -306,11 +328,13 @@
 				D1C25F51238C600B00048B90 /* LoginViewController.swift in Sources */,
 				D1FCF5DE238F333D00373ECA /* AuthService.swift in Sources */,
 				D1FCF5E2238F708600373ECA /* SignUpViewController.swift in Sources */,
+				D1E7F3DE2395BFA500929253 /* BaseViewController.swift in Sources */,
 				D1C25F4F238C600B00048B90 /* AppDelegate.swift in Sources */,
-				D1C25F77238D997700048B90 /* LoginViewModelFromUser.swift in Sources */,
+				D1E7F3E32395CBB100929253 /* NavigationService.swift in Sources */,
 				D1C25F73238D93D600048B90 /* User.swift in Sources */,
+				D1E7F3E12395C0BF00929253 /* K.swift in Sources */,
 				D1C25F79238DA54000048B90 /* HomeViewController.swift in Sources */,
-				D1FCF5DC238F32C000373ECA /* AuthServiceProtocol.swift in Sources */,
+				D1E7F3DB2395B97600929253 /* SignUpViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

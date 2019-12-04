@@ -8,10 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    
-    let errorMessage = "Please, complete all the fields"
-    let validateErrorMessage = "Invalid username/password"
+class LoginViewController: BaseViewController {
    
     @IBOutlet weak var loginButtonView: UIButton!
     @IBOutlet weak var signUpButtonView: UIButton!
@@ -19,6 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextView: UITextField!
     
     @IBOutlet weak var errorLabel: UILabel!
+    
+    var loginVM: LoginViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,28 +32,23 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInPressed(_ sender: UIButton) {
         errorLabel.isHidden = true
-        
-        let user = User()
-        user.username = usernameTextView.text ?? ""
-        user.password = passwordTextView.text ?? ""
-        
-        if user.username == "" || user.password == "" {
-            setErrorMessage(errorText: errorMessage)
+                
+        if let username = usernameTextView.text, let password = passwordTextView.text, username != "", password != "" {
+            
+            loginVM = LoginViewModel(username, password)
+                
+            let result = loginVM.loginUser()
+            switch result {
+            case .success(()):
+                NavigationService.changeRoot(withIdentifier: "navController")
+            case .failure(let error):
+                setErrorMessage(errorLabel: errorLabel, errorText: error.localizedDescription)
+            }
+            
+        } else {
+            setErrorMessage(errorLabel: errorLabel, errorText: K.AuthConstants.fieldEmptyErrorMessage)
             return
         }
-        
-        let loginVM = LoginViewModelFromUser(withUser: user)
-        
-        if loginVM.validateUserData() {
-            performSegue(withIdentifier: "GoToHome", sender: self)
-        } else {
-            setErrorMessage(errorText: validateErrorMessage)
-        }
-    }
-    
-    func setErrorMessage(errorText: String) {
-        errorLabel.text = errorText
-        errorLabel.isHidden = false
     }
 }
 
