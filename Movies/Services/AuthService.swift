@@ -11,8 +11,8 @@ import RealmSwift
 
 protocol AuthServiceProtocol {
     
-    static func loginWithResult(username: String, password: String) -> Result<(), AuthError>
-    static func register(user: User) throws
+    func loginWithResult(username: String, password: String) -> Result<(), AuthError>
+    func register(user: User) throws
 }
 
 enum AuthError: Error {
@@ -34,7 +34,7 @@ extension AuthError: LocalizedError {
 
 struct AuthService: AuthServiceProtocol {
     
-    static func loginWithResult(username: String, password: String) -> Result<(), AuthError> {
+    func loginWithResult(username: String, password: String) -> Result<(), AuthError> {
         let user = try! Realm().object(ofType: User.self, forPrimaryKey: username)
         if let storedUser = user {
             if storedUser.password == password {
@@ -47,7 +47,7 @@ struct AuthService: AuthServiceProtocol {
         }
     }
     
-    static func register(user: User) throws {
+    func register(user: User) throws {
         do {
             let realm = try Realm()
             

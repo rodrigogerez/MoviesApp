@@ -24,10 +24,12 @@ class LoginViewModel: LoginViewModelProtocol {
     var username: String
     var password: String
     
+    let authService: AuthService
+    
     // Protocol functions
     func loginUser() -> Result<(), AuthError> {
         
-        let result = AuthService.loginWithResult(username: username, password: password)
+        let result = authService.loginWithResult(username: username, password: password)
         switch result {
             case .success():
                 return .success(())
@@ -37,13 +39,15 @@ class LoginViewModel: LoginViewModelProtocol {
     }
     
     func getActiveUserData() {
-        
+        //TODO: implement this!
     }
     
     // Init
     init(_ username: String, _ password: String) {
         self.username = username
         self.password = password
+        
+        self.authService = AuthService()
     }
     
 }

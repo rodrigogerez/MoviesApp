@@ -351,7 +351,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fSV-GF-Ij3">
-                                <rect key="frame" x="20" y="151" width="374" height="711"/>
+                                <rect key="frame" x="20" y="119" width="374" height="689"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BBW-bl-HXU">
@@ -382,6 +382,9 @@
                         <viewLayoutGuide key="safeArea" id="p6a-Bc-vlO"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="fNG-6l-Ct3"/>
+                    <connections>
+                        <outlet property="movieTypeSegmentedControl" destination="DQN-pC-lEe" id="8B3-Gq-1vb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYq-Ff-FVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -19,8 +19,10 @@ protocol SignUpViewModelProtocol {
 class SignUpViewModel: SignUpViewModelProtocol {
     var user: User
     
+    let authService: AuthService
+    
     func saveUserData() -> Result<(), AuthError> {
-        guard let _ = try? AuthService.register(user: user) else {
+        guard let _ = try? authService.register(user: user) else {
             return .failure(.ExistentUser)
         }
         
@@ -35,5 +37,7 @@ class SignUpViewModel: SignUpViewModelProtocol {
         self.user.password = password
         self.user.name = name
         self.user.email = email
+        
+        self.authService = AuthService()
     }
 }
