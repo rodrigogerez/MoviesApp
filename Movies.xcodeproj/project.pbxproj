@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D144FF3D23A7E8DB00384C39 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D144FF3C23A7E8DB00384C39 /* ImageService.swift */; };
 		D1C25F4F238C600B00048B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F4E238C600B00048B90 /* AppDelegate.swift */; };
 		D1C25F51238C600B00048B90 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F50238C600B00048B90 /* LoginViewController.swift */; };
 		D1C25F54238C600B00048B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C25F52238C600B00048B90 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		D1E7F3E523983A2400929253 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E423983A2400929253 /* NetworkService.swift */; };
 		D1E7F3E723A1722600929253 /* MovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E623A1722600929253 /* MovieRequest.swift */; };
 		D1E7F3E923A1743F00929253 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E823A1743F00929253 /* HomeViewModel.swift */; };
+		D1E7F3EC23A5A85A00929253 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3EB23A5A85A00929253 /* MovieCell.swift */; };
 		D1F3FE60239587FF002AD44D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5D239587FF002AD44D /* RealmSwift.framework */; };
 		D1F3FE61239587FF002AD44D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5D239587FF002AD44D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1F3FE62239587FF002AD44D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5E239587FF002AD44D /* Alamofire.framework */; };
@@ -61,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D144FF3C23A7E8DB00384C39 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		D1C25F4B238C600B00048B90 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C25F4E238C600B00048B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C25F50238C600B00048B90 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		D1E7F3E423983A2400929253 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D1E7F3E623A1722600929253 /* MovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRequest.swift; sourceTree = "<group>"; };
 		D1E7F3E823A1743F00929253 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D1E7F3EB23A5A85A00929253 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		D1F3FE5D239587FF002AD44D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		D1F3FE5E239587FF002AD44D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D1F3FE5F239587FF002AD44D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 		D1C25F71238D93A700048B90 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D1E7F3EA23A5A83F00929253 /* Cells */,
 				D1E7F3DC2395B9F500929253 /* Home */,
 				D1FCF5E0238F703400373ECA /* Register */,
 				D1FCF5DF238F428A00373ECA /* Login */,
@@ -191,6 +196,7 @@
 				D1E7F3E22395CBB100929253 /* NavigationService.swift */,
 				D1E7F3E423983A2400929253 /* NetworkService.swift */,
 				D1E7F3E623A1722600929253 /* MovieRequest.swift */,
+				D144FF3C23A7E8DB00384C39 /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -210,6 +216,14 @@
 				D1E7F3E02395C0BF00929253 /* K.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		D1E7F3EA23A5A83F00929253 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D1E7F3EB23A5A85A00929253 /* MovieCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D1FCF5DF238F428A00373ECA /* Login */ = {
@@ -342,8 +356,10 @@
 				D1E7F3E32395CBB100929253 /* NavigationService.swift in Sources */,
 				D1C25F73238D93D600048B90 /* User.swift in Sources */,
 				D1E7F3E12395C0BF00929253 /* K.swift in Sources */,
+				D1E7F3EC23A5A85A00929253 /* MovieCell.swift in Sources */,
 				D1C25F79238DA54000048B90 /* HomeViewController.swift in Sources */,
 				D1E7F3E523983A2400929253 /* NetworkService.swift in Sources */,
+				D144FF3D23A7E8DB00384C39 /* ImageService.swift in Sources */,
 				D1E7F3E723A1722600929253 /* MovieRequest.swift in Sources */,
 				D1E7F3E923A1743F00929253 /* HomeViewModel.swift in Sources */,
 				D1E7F3DB2395B97600929253 /* SignUpViewModel.swift in Sources */,

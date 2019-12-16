@@ -26,4 +26,9 @@ struct K {
         static let topRatedPath = "/movie/top_rated"
     }
     
+    struct ImageConstants {
+        static let baseImageURL = "https://image.tmdb.org/t/p/w500"
+        static let badRequestErrorMessage = "Cannot get an image. Please, try again!"
+    }
+    
 }
