@@ -39,12 +39,11 @@ class LoginViewController: BaseViewController {
                 
             let result = loginVM.loginUser()
             switch result {
-            case .success(()):
-                NavigationService.changeRoot(withIdentifier: "navController")
-            case .failure(let error):
-                setErrorMessage(errorLabel: errorLabel, errorText: error.localizedDescription)
+                case .success(()):
+                    NavigationService.changeRoot(withIdentifier: "navController")
+                case .failure(let error):
+                    setErrorMessage(errorLabel: errorLabel, errorText: error.localizedDescription)
             }
-            
         } else {
             setErrorMessage(errorLabel: errorLabel, errorText: K.AuthConstants.fieldEmptyErrorMessage)
             return

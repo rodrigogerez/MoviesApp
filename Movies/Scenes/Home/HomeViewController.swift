@@ -13,7 +13,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
     var homeViewModel: HomeViewModel!
-    var movies: [Movie]!
+    var movies: [Movie]! {
+        didSet
+        {
+            moviesCollectionView.reloadData()
+        }
+    }
     
     var index: Int {
         return movieTypeSegmentedControl.selectedSegmentIndex
@@ -21,8 +26,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchMoviesFromAPI()
         setupUI()
+        fetchMoviesFromAPI()
     }
     
     // Set up all visual improvements
@@ -38,22 +43,14 @@ class HomeViewController: UIViewController {
     func fetchMoviesFromAPI()
     {
         homeViewModel = HomeViewModel(index)
-        let group = DispatchGroup()
-        
         
         DispatchQueue.global().async {
-            group.enter()
             self.homeViewModel.fetchMovies(completion: { (mov) in
                 self.movies = mov
             }) { (error) in
                 print(error.localizedDescription)
             }
-            
-            group.leave()
         }
-        
-        group.wait()
-        moviesCollectionView.reloadData()
     }
 }
 
@@ -69,21 +66,23 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = "Item"
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! MovieCell
-        if let movies = movies {
-            let url = URL(string: "\(K.ImageConstants.baseImageURL)\(movies[indexPath.row].posterPath)")!
+        if let movies = movies, indexPath.row < movies.count,
+            let posterPath = movies[indexPath.row].posterPath,
+            let url = URL(string: "\(K.ImageConstants.baseImageURL)\(posterPath)") {
             let result = homeViewModel.downloadImage(from: url)
             
             switch result {
-            case .success(let data):
-                cell.itemImage.image = data
-            case .failure(let error):
-                print(error.localizedDescription)
+                case .success(let data):
+                    cell.itemImage.image = data
+                case .failure(let error):
+                    print(error.localizedDescription)
             }
+        } else {
+            
         }
-        
-        
-         return cell
+        return cell
     }
 }
 
