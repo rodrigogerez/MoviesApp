@@ -79,9 +79,8 @@ extension HomeViewController: UICollectionViewDataSource {
                 case .failure(let error):
                     print(error.localizedDescription)
             }
-        } else {
-            
         }
+        
         return cell
     }
 }
