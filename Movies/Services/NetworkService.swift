@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 protocol NetworkServiceProtocol {
-    func fetchMovies(from movieRequest: MovieRequest,completion: @escaping ([Movie]?) -> Void, errorHandler: @escaping (NetworkError) -> Void)
+    func fetchMovies(from movieRequest: MovieRequest, completion: @escaping ([Movie]?) -> Void, errorHandler: @escaping (NetworkError) -> Void)
 }
 
 enum NetworkError: Error {
@@ -24,7 +24,7 @@ extension NetworkError: LocalizedError {
             case .BadRequestError:
                 return K.NetworkConstants.badRequestErrorMessage
             case .WrongURLError:
-                return K.NetworkConstants.badRequestErrorMessage
+                return K.NetworkConstants.wrongURLErrorMessage
         }
     }
 }
@@ -43,8 +43,7 @@ class NetworkService: NetworkServiceProtocol {
         return params
     }
     
-    func fetchMovies(from movieRequest: MovieRequest,completion: @escaping ([Movie]?) -> Void, errorHandler: @escaping (NetworkError) -> Void){
-        
+    func fetchMovies(from movieRequest: MovieRequest, completion: @escaping ([Movie]?) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
         guard let url = URL(string: "\(K.NetworkConstants.baseURL)\(movieRequest.path)") else {
             errorHandler(NetworkError.WrongURLError)
             return
@@ -52,16 +51,18 @@ class NetworkService: NetworkServiceProtocol {
         
         Alamofire.request(url, parameters: parameters)
             .validate(contentType: ["application/json"])
-            .response { response in
-            guard let data = response.data else { return }
-            do {
-                let result = try self.jsonDecoder.decode(MoviesResponse.self, from: data)
-                completion(result.results)
-              
-            } catch {
-                errorHandler(NetworkError.BadRequestError)
-            }
-      }
-        
+            .responseData { response in
+                switch response.result {
+                    case .success(let data):
+                        if let result = try? self.jsonDecoder.decode(MoviesResponse.self, from: data)
+                        {
+                            completion(result.results)
+                        }
+                    case .failure(let error):
+                        errorHandler(NetworkError.BadRequestError)
+                        print(error.localizedDescription)
+                        return
+                }
+        }
     }
 }

@@ -21,6 +21,7 @@ struct K {
         static let baseURL = "https://api.themoviedb.org/3"
         static let apiKey = "4e7b644c6c3b7913ea05de2841c75dfb"
         static let badRequestErrorMessage = "Has been an error. Please, try again!"
+        static let wrongURLErrorMessage = "The URL is wrong. Please, try again!"
         static let upcomingPath = "/movie/upcoming"
         static let popularPath = "/movie/popular"
         static let topRatedPath = "/movie/top_rated"
@@ -30,5 +31,4 @@ struct K {
         static let baseImageURL = "https://image.tmdb.org/t/p/w500"
         static let badRequestErrorMessage = "Cannot get an image. Please, try again!"
     }
-    
 }

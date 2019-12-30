@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D144FF3D23A7E8DB00384C39 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D144FF3C23A7E8DB00384C39 /* ImageService.swift */; };
+		D1B1C0B223BF9F2C00468E3F /* KingfisherSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0B023BF9F2C00468E3F /* KingfisherSwiftUI.framework */; };
+		D1B1C0B323BF9F2C00468E3F /* KingfisherSwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0B023BF9F2C00468E3F /* KingfisherSwiftUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D1B1C0B423BF9F2C00468E3F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0B123BF9F2C00468E3F /* Kingfisher.framework */; };
+		D1B1C0B523BF9F2C00468E3F /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0B123BF9F2C00468E3F /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1C25F4F238C600B00048B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F4E238C600B00048B90 /* AppDelegate.swift */; };
 		D1C25F51238C600B00048B90 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F50238C600B00048B90 /* LoginViewController.swift */; };
 		D1C25F54238C600B00048B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C25F52238C600B00048B90 /* Main.storyboard */; };
@@ -53,6 +57,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D1B1C0B523BF9F2C00468E3F /* Kingfisher.framework in Embed Frameworks */,
+				D1B1C0B323BF9F2C00468E3F /* KingfisherSwiftUI.framework in Embed Frameworks */,
 				D1F3FE65239587FF002AD44D /* Realm.framework in Embed Frameworks */,
 				D1F3FE61239587FF002AD44D /* RealmSwift.framework in Embed Frameworks */,
 				D1F3FE63239587FF002AD44D /* Alamofire.framework in Embed Frameworks */,
@@ -64,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		D144FF3C23A7E8DB00384C39 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		D1B1C0B023BF9F2C00468E3F /* KingfisherSwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KingfisherSwiftUI.framework; path = Carthage/Build/iOS/KingfisherSwiftUI.framework; sourceTree = "<group>"; };
+		D1B1C0B123BF9F2C00468E3F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		D1C25F4B238C600B00048B90 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C25F4E238C600B00048B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C25F50238C600B00048B90 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B1C0B423BF9F2C00468E3F /* Kingfisher.framework in Frameworks */,
+				D1B1C0B223BF9F2C00468E3F /* KingfisherSwiftUI.framework in Frameworks */,
 				D1F3FE64239587FF002AD44D /* Realm.framework in Frameworks */,
 				D1F3FE60239587FF002AD44D /* RealmSwift.framework in Frameworks */,
 				D1F3FE62239587FF002AD44D /* Alamofire.framework in Frameworks */,
@@ -182,6 +192,8 @@
 		D1C25F7E238EDB3D00048B90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1B1C0B123BF9F2C00468E3F /* Kingfisher.framework */,
+				D1B1C0B023BF9F2C00468E3F /* KingfisherSwiftUI.framework */,
 				D1F3FE5E239587FF002AD44D /* Alamofire.framework */,
 				D1F3FE5F239587FF002AD44D /* Realm.framework */,
 				D1F3FE5D239587FF002AD44D /* RealmSwift.framework */,
@@ -525,7 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "Carthage/Build/iOS/Realm.framework Carthage/Build/iOS/RealmSwift.framework Carthage/Build/iOS/Alamofire.framework";
+				DEVELOPMENT_ASSET_PATHS = "Carthage/Build/iOS/Alamofire.framework Carthage/Build/iOS/KingfisherSwiftUI.framework Carthage/Build/iOS/Realm.framework Carthage/Build/iOS/Kingfisher.framework Carthage/Build/iOS/RealmSwift.framework";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -547,7 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "Carthage/Build/iOS/Realm.framework Carthage/Build/iOS/RealmSwift.framework Carthage/Build/iOS/Alamofire.framework";
+				DEVELOPMENT_ASSET_PATHS = "Carthage/Build/iOS/Alamofire.framework Carthage/Build/iOS/KingfisherSwiftUI.framework Carthage/Build/iOS/Realm.framework Carthage/Build/iOS/Kingfisher.framework Carthage/Build/iOS/RealmSwift.framework";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

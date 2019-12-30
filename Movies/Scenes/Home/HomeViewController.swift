@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var movieTypeSegmentedControl: UISegmentedControl!
@@ -44,7 +45,7 @@ class HomeViewController: UIViewController {
     {
         homeViewModel = HomeViewModel(index)
         
-        DispatchQueue.global().async {
+        DispatchQueue.main.async {
             self.homeViewModel.fetchMovies(completion: { (mov) in
                 self.movies = mov
             }) { (error) in
@@ -71,16 +72,8 @@ extension HomeViewController: UICollectionViewDataSource {
         if let movies = movies, indexPath.row < movies.count,
             let posterPath = movies[indexPath.row].posterPath,
             let url = URL(string: "\(K.ImageConstants.baseImageURL)\(posterPath)") {
-            let result = homeViewModel.downloadImage(from: url)
-            
-            switch result {
-                case .success(let data):
-                    cell.itemImage.image = data
-                case .failure(let error):
-                    print(error.localizedDescription)
+                cell.itemImage.kf.setImage(with: url)
             }
-        }
-        
         return cell
     }
 }

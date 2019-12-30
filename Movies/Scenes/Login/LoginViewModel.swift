@@ -43,11 +43,11 @@ class LoginViewModel: LoginViewModelProtocol {
     }
     
     // Init
-    init(_ username: String, _ password: String) {
+    init(_ username: String, _ password: String,_ authService: AuthService) {
         self.username = username
         self.password = password
         
-        self.authService = AuthService()
+        self.authService = authService
     }
     
 }
