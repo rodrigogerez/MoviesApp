@@ -30,7 +30,7 @@ public struct MovieDetail: Codable {
     public let backdropPath: String?
     public let posterPath: String?
     public let overview: String
-    public let releaseDate: Date
+    //public let releaseDate: Date
     public let voteAverage: Double
     public let voteCount: Int
     public let tagline: String?

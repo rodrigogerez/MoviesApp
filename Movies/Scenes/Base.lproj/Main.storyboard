@@ -410,11 +410,73 @@
                     <connections>
                         <outlet property="movieTypeSegmentedControl" destination="DQN-pC-lEe" id="8B3-Gq-1vb"/>
                         <outlet property="moviesCollectionView" destination="fSV-GF-Ij3" id="PXu-qD-lce"/>
+                        <segue destination="LNt-LF-Rwv" kind="show" identifier="goToDetails" id="qpq-xf-jvg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYq-Ff-FVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824.63768115942037" y="40.848214285714285"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="WhI-10-Yq4">
+            <objects>
+                <viewController id="LNt-LF-Rwv" customClass="DetailViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ja6-mW-dzO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is the movie title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSO-8f-biv" userLabel="Title">
+                                <rect key="frame" x="20" y="56" width="374" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="k72-IV-bZf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3cd-rT-Iay">
+                                <rect key="frame" x="16" y="154" width="382" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="5Uv-oJ-izj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFe-L4-VgF">
+                                <rect key="frame" x="20" y="394" width="374" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="vOm-ek-zQf"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AV3-Na-ie8" firstAttribute="trailing" secondItem="SSO-8f-biv" secondAttribute="trailing" constant="20" id="A47-sB-dkQ"/>
+                            <constraint firstItem="AV3-Na-ie8" firstAttribute="trailing" secondItem="3cd-rT-Iay" secondAttribute="trailing" constant="16" id="Agx-wx-5A5"/>
+                            <constraint firstItem="3cd-rT-Iay" firstAttribute="leading" secondItem="AV3-Na-ie8" secondAttribute="leading" constant="16" id="CKL-YN-4Lw"/>
+                            <constraint firstItem="3cd-rT-Iay" firstAttribute="top" secondItem="SSO-8f-biv" secondAttribute="bottom" constant="8" id="Wls-ac-iC2"/>
+                            <constraint firstItem="IFe-L4-VgF" firstAttribute="top" secondItem="3cd-rT-Iay" secondAttribute="bottom" constant="8" id="b3X-6C-fPA"/>
+                            <constraint firstItem="IFe-L4-VgF" firstAttribute="leading" secondItem="AV3-Na-ie8" secondAttribute="leading" constant="20" id="d4m-eF-eUc"/>
+                            <constraint firstItem="SSO-8f-biv" firstAttribute="top" secondItem="AV3-Na-ie8" secondAttribute="top" id="fSN-dL-tUI"/>
+                            <constraint firstItem="AV3-Na-ie8" firstAttribute="trailing" secondItem="IFe-L4-VgF" secondAttribute="trailing" constant="20" id="iI0-Uw-R10"/>
+                            <constraint firstItem="SSO-8f-biv" firstAttribute="leading" secondItem="AV3-Na-ie8" secondAttribute="leading" constant="20" id="ki5-rs-U5O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AV3-Na-ie8"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="ATj-ql-XRy">
+                        <barButtonItem key="backBarButtonItem" title="a" id="sNg-Dq-R2U"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="TitleLabel" destination="SSO-8f-biv" id="3ak-v4-UXz"/>
+                        <outlet property="movieImage" destination="3cd-rT-Iay" id="fAp-m6-czD"/>
+                        <outlet property="summaryLabel" destination="IFe-L4-VgF" id="Sju-fN-KVh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKM-RY-B4n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663.7681159420292" y="40.848214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zgx-YP-yq0">

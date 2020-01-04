@@ -10,12 +10,14 @@ import Foundation
 import Alamofire
 
 protocol NetworkServiceProtocol {
-    func fetchMovies(from movieRequest: MovieRequest, completion: @escaping ([Movie]?) -> Void, errorHandler: @escaping (NetworkError) -> Void)
+    func fetchMovies(from movieRequest: MovieRequest, completion: @escaping (MoviesResponse) -> Void, errorHandler: @escaping (NetworkError) -> Void)
+    func fetchMovieById(byId movieId: Int, completion: @escaping (MovieDetail) -> Void, errorHandler: @escaping (NetworkError) -> Void)
 }
 
 enum NetworkError: Error {
     case BadRequestError
     case WrongURLError
+    case SerializationError
 }
 
 extension NetworkError: LocalizedError {
@@ -25,38 +27,36 @@ extension NetworkError: LocalizedError {
                 return K.NetworkConstants.badRequestErrorMessage
             case .WrongURLError:
                 return K.NetworkConstants.wrongURLErrorMessage
+            case .SerializationError:
+                return K.NetworkConstants.serializationErrorMessage
         }
     }
 }
 
 class NetworkService: NetworkServiceProtocol {
     
-    let jsonDecoder: JSONDecoder = {
+    private let jsonDecoder: JSONDecoder = {
         var jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         return jsonDecoder
     } ()
     
-    var parameters: [String: Any] {
-        let params = ["api_key": K.NetworkConstants.apiKey]
-        
-        return params
-    }
-    
-    func fetchMovies(from movieRequest: MovieRequest, completion: @escaping ([Movie]?) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
+    func fetchData<T: Codable>(from movieRequest: MovieRequest, completion: @escaping (T) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
         guard let url = URL(string: "\(K.NetworkConstants.baseURL)\(movieRequest.path)") else {
             errorHandler(NetworkError.WrongURLError)
             return
         }
         
-        Alamofire.request(url, parameters: parameters)
+        Alamofire.request(url, parameters: movieRequest.parameters)
             .validate(contentType: ["application/json"])
             .responseData { response in
                 switch response.result {
                     case .success(let data):
-                        if let result = try? self.jsonDecoder.decode(MoviesResponse.self, from: data)
+                        if let result = try? self.jsonDecoder.decode(T.self, from: data)
                         {
-                            completion(result.results)
+                            completion(result)
+                        } else {
+                            errorHandler(NetworkError.SerializationError)
                         }
                     case .failure(let error):
                         errorHandler(NetworkError.BadRequestError)
@@ -64,5 +64,13 @@ class NetworkService: NetworkServiceProtocol {
                         return
                 }
         }
+    }
+    
+    func fetchMovies(from movieRequest: MovieRequest, completion: @escaping (MoviesResponse) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
+        fetchData(from: movieRequest, completion: completion, errorHandler: errorHandler)
+    }
+    
+    func fetchMovieById(byId movieId: Int, completion: @escaping (MovieDetail) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
+        fetchData(from: MovieRequest.findById(movieId), completion: completion, errorHandler: errorHandler)
     }
 }

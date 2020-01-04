@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
     var homeViewModel: HomeViewModel!
+    var movieId: Int!
+    
     var movies: [Movie]! {
         didSet
         {
@@ -28,7 +30,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        fetchMoviesFromAPI()
+        fetchMoviesFromAPI(self.index)
     }
     
     // Set up all visual improvements
@@ -38,10 +40,10 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func movieTypeChanged(_ sender: UISegmentedControl) {
-        fetchMoviesFromAPI()
+        fetchMoviesFromAPI(self.index)
     }
     
-    func fetchMoviesFromAPI()
+    func fetchMoviesFromAPI(_ index: Int)
     {
         homeViewModel = HomeViewModel(index)
         
@@ -79,5 +81,13 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        movieId = movies[indexPath.row].id
+        performSegue(withIdentifier: "goToDetails", sender: nil)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailViewController = segue.destination as? DetailViewController else { return }
+        detailViewController.movieId = movieId
+    }
 }
