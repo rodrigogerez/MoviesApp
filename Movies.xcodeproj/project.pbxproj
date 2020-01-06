@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1B1C0B223BF9F2C00468E3F /* KingfisherSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0B023BF9F2C00468E3F /* KingfisherSwiftUI.framework */; };
+		D1B1C0B323BF9F2C00468E3F /* KingfisherSwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0B023BF9F2C00468E3F /* KingfisherSwiftUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D1B1C0B423BF9F2C00468E3F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0B123BF9F2C00468E3F /* Kingfisher.framework */; };
+		D1B1C0B523BF9F2C00468E3F /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0B123BF9F2C00468E3F /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D1B1C0B823BFBC0600468E3F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B1C0B723BFBC0600468E3F /* DetailViewController.swift */; };
+		D1B1C0BA23BFBD6D00468E3F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B1C0B923BFBD6D00468E3F /* DetailViewModel.swift */; };
 		D1C25F4F238C600B00048B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F4E238C600B00048B90 /* AppDelegate.swift */; };
 		D1C25F51238C600B00048B90 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F50238C600B00048B90 /* LoginViewController.swift */; };
 		D1C25F54238C600B00048B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C25F52238C600B00048B90 /* Main.storyboard */; };
@@ -21,6 +27,10 @@
 		D1E7F3DE2395BFA500929253 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3DD2395BFA500929253 /* BaseViewController.swift */; };
 		D1E7F3E12395C0BF00929253 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E02395C0BF00929253 /* K.swift */; };
 		D1E7F3E32395CBB100929253 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E22395CBB100929253 /* NavigationService.swift */; };
+		D1E7F3E523983A2400929253 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E423983A2400929253 /* NetworkService.swift */; };
+		D1E7F3E723A1722600929253 /* MovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E623A1722600929253 /* MovieRequest.swift */; };
+		D1E7F3E923A1743F00929253 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3E823A1743F00929253 /* HomeViewModel.swift */; };
+		D1E7F3EC23A5A85A00929253 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7F3EB23A5A85A00929253 /* MovieCell.swift */; };
 		D1F3FE60239587FF002AD44D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5D239587FF002AD44D /* RealmSwift.framework */; };
 		D1F3FE61239587FF002AD44D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5D239587FF002AD44D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D1F3FE62239587FF002AD44D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F3FE5E239587FF002AD44D /* Alamofire.framework */; };
@@ -48,6 +58,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D1B1C0B523BF9F2C00468E3F /* Kingfisher.framework in Embed Frameworks */,
+				D1B1C0B323BF9F2C00468E3F /* KingfisherSwiftUI.framework in Embed Frameworks */,
 				D1F3FE65239587FF002AD44D /* Realm.framework in Embed Frameworks */,
 				D1F3FE61239587FF002AD44D /* RealmSwift.framework in Embed Frameworks */,
 				D1F3FE63239587FF002AD44D /* Alamofire.framework in Embed Frameworks */,
@@ -58,6 +70,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D1B1C0B023BF9F2C00468E3F /* KingfisherSwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KingfisherSwiftUI.framework; path = Carthage/Build/iOS/KingfisherSwiftUI.framework; sourceTree = "<group>"; };
+		D1B1C0B123BF9F2C00468E3F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		D1B1C0B723BFBC0600468E3F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D1B1C0B923BFBD6D00468E3F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D1C25F4B238C600B00048B90 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C25F4E238C600B00048B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C25F50238C600B00048B90 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +92,10 @@
 		D1E7F3DD2395BFA500929253 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D1E7F3E02395C0BF00929253 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		D1E7F3E22395CBB100929253 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
+		D1E7F3E423983A2400929253 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D1E7F3E623A1722600929253 /* MovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRequest.swift; sourceTree = "<group>"; };
+		D1E7F3E823A1743F00929253 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D1E7F3EB23A5A85A00929253 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		D1F3FE5D239587FF002AD44D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		D1F3FE5E239587FF002AD44D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D1F3FE5F239587FF002AD44D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -88,6 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B1C0B423BF9F2C00468E3F /* Kingfisher.framework in Frameworks */,
+				D1B1C0B223BF9F2C00468E3F /* KingfisherSwiftUI.framework in Frameworks */,
 				D1F3FE64239587FF002AD44D /* Realm.framework in Frameworks */,
 				D1F3FE60239587FF002AD44D /* RealmSwift.framework in Frameworks */,
 				D1F3FE62239587FF002AD44D /* Alamofire.framework in Frameworks */,
@@ -104,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1B1C0B623BFBBE800468E3F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D1B1C0B923BFBD6D00468E3F /* DetailViewModel.swift */,
+				D1B1C0B723BFBC0600468E3F /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		D1C25F42238C600A00048B90 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +190,8 @@
 		D1C25F71238D93A700048B90 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D1B1C0B623BFBBE800468E3F /* Detail */,
+				D1E7F3EA23A5A83F00929253 /* Cells */,
 				D1E7F3DC2395B9F500929253 /* Home */,
 				D1FCF5E0238F703400373ECA /* Register */,
 				D1FCF5DF238F428A00373ECA /* Login */,
@@ -171,6 +204,8 @@
 		D1C25F7E238EDB3D00048B90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1B1C0B123BF9F2C00468E3F /* Kingfisher.framework */,
+				D1B1C0B023BF9F2C00468E3F /* KingfisherSwiftUI.framework */,
 				D1F3FE5E239587FF002AD44D /* Alamofire.framework */,
 				D1F3FE5F239587FF002AD44D /* Realm.framework */,
 				D1F3FE5D239587FF002AD44D /* RealmSwift.framework */,
@@ -183,6 +218,8 @@
 			children = (
 				D1FCF5DD238F333D00373ECA /* AuthService.swift */,
 				D1E7F3E22395CBB100929253 /* NavigationService.swift */,
+				D1E7F3E423983A2400929253 /* NetworkService.swift */,
+				D1E7F3E623A1722600929253 /* MovieRequest.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -190,6 +227,7 @@
 		D1E7F3DC2395B9F500929253 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D1E7F3E823A1743F00929253 /* HomeViewModel.swift */,
 				D1C25F78238DA54000048B90 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -201,6 +239,14 @@
 				D1E7F3E02395C0BF00929253 /* K.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		D1E7F3EA23A5A83F00929253 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D1E7F3EB23A5A85A00929253 /* MovieCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D1FCF5DF238F428A00373ECA /* Login */ = {
@@ -324,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C25F84238EE3BB00048B90 /* Movie.swift in Sources */,
+				D1B1C0B823BFBC0600468E3F /* DetailViewController.swift in Sources */,
 				D1C25F75238D98B600048B90 /* LoginViewModel.swift in Sources */,
 				D1C25F51238C600B00048B90 /* LoginViewController.swift in Sources */,
 				D1FCF5DE238F333D00373ECA /* AuthService.swift in Sources */,
@@ -333,7 +380,12 @@
 				D1E7F3E32395CBB100929253 /* NavigationService.swift in Sources */,
 				D1C25F73238D93D600048B90 /* User.swift in Sources */,
 				D1E7F3E12395C0BF00929253 /* K.swift in Sources */,
+				D1E7F3EC23A5A85A00929253 /* MovieCell.swift in Sources */,
 				D1C25F79238DA54000048B90 /* HomeViewController.swift in Sources */,
+				D1B1C0BA23BFBD6D00468E3F /* DetailViewModel.swift in Sources */,
+				D1E7F3E523983A2400929253 /* NetworkService.swift in Sources */,
+				D1E7F3E723A1722600929253 /* MovieRequest.swift in Sources */,
+				D1E7F3E923A1743F00929253 /* HomeViewModel.swift in Sources */,
 				D1E7F3DB2395B97600929253 /* SignUpViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,7 +549,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "Carthage/Build/iOS/Realm.framework Carthage/Build/iOS/RealmSwift.framework Carthage/Build/iOS/Alamofire.framework";
+				DEVELOPMENT_ASSET_PATHS = "Carthage/Build/iOS/Alamofire.framework Carthage/Build/iOS/KingfisherSwiftUI.framework Carthage/Build/iOS/Realm.framework Carthage/Build/iOS/Kingfisher.framework Carthage/Build/iOS/RealmSwift.framework";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -519,7 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "Carthage/Build/iOS/Realm.framework Carthage/Build/iOS/RealmSwift.framework Carthage/Build/iOS/Alamofire.framework";
+				DEVELOPMENT_ASSET_PATHS = "Carthage/Build/iOS/Alamofire.framework Carthage/Build/iOS/KingfisherSwiftUI.framework Carthage/Build/iOS/Realm.framework Carthage/Build/iOS/Kingfisher.framework Carthage/Build/iOS/RealmSwift.framework";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

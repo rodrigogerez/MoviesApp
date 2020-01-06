@@ -19,6 +19,8 @@ class LoginViewController: BaseViewController {
     
     var loginVM: LoginViewModel!
     
+    let authService = AuthService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +29,7 @@ class LoginViewController: BaseViewController {
 
     // Set up all visual improvements
     func setupUI() {
-        loginButtonView.layer.cornerRadius = 20
+        loginButtonView.layer.cornerRadius = 20        
     }
     
     @IBAction func signInPressed(_ sender: UIButton) {
@@ -35,16 +37,15 @@ class LoginViewController: BaseViewController {
                 
         if let username = usernameTextView.text, let password = passwordTextView.text, username != "", password != "" {
             
-            loginVM = LoginViewModel(username, password)
+            loginVM = LoginViewModel(username, password, authService)
                 
             let result = loginVM.loginUser()
             switch result {
-            case .success(()):
-                NavigationService.changeRoot(withIdentifier: "navController")
-            case .failure(let error):
-                setErrorMessage(errorLabel: errorLabel, errorText: error.localizedDescription)
+                case .success(()):
+                    NavigationService.changeRoot(withIdentifier: "navController")
+                case .failure(let error):
+                    setErrorMessage(errorLabel: errorLabel, errorText: error.localizedDescription)
             }
-            
         } else {
             setErrorMessage(errorLabel: errorLabel, errorText: K.AuthConstants.fieldEmptyErrorMessage)
             return

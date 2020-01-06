@@ -1,2 +1,3 @@
 github "realm/realm-cocoa"
 github "alamofire/alamofire"
+github "onevcat/Kingfisher" ~> 5.0
