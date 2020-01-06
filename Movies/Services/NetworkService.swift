@@ -38,6 +38,9 @@ class NetworkService: NetworkServiceProtocol {
     private let jsonDecoder: JSONDecoder = {
         var jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-mm-dd"
+        jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
         return jsonDecoder
     } ()
     
