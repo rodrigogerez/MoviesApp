@@ -19,7 +19,7 @@ protocol SignUpViewModelProtocol {
 class SignUpViewModel: SignUpViewModelProtocol {
     var user: User
     
-    let authService: AuthService
+    let authService: AuthServiceProtocol
     
     func saveUserData() -> Result<(), AuthError> {
         guard let _ = try? authService.register(user: user) else {

@@ -47,12 +47,12 @@ class HomeViewController: UIViewController {
     {
         homeViewModel = HomeViewModel(index)
         
-        DispatchQueue.main.async {
-            self.homeViewModel.fetchMovies(completion: { (mov) in
+        self.homeViewModel.fetchMovies(completion: { (mov) in
+            DispatchQueue.main.async {
                 self.movies = mov
-            }) { (error) in
-                print(error.localizedDescription)
             }
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
 }

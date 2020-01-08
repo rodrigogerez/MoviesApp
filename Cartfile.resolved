@@ -1,3 +1,4 @@
 github "alamofire/alamofire" "4.9.1"
+github "evgenyneu/Cosmos" "20.0.1"
 github "onevcat/Kingfisher" "5.12.0"
 github "realm/realm-cocoa" "v4.3.0"
