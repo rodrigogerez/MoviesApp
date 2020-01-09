@@ -15,6 +15,8 @@
 		D1B1C0BA23BFBD6D00468E3F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B1C0B923BFBD6D00468E3F /* DetailViewModel.swift */; };
 		D1B1C0BC23C55D0A00468E3F /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0BB23C55D0A00468E3F /* Cosmos.framework */; };
 		D1B1C0BD23C55D0A00468E3F /* Cosmos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1B1C0BB23C55D0A00468E3F /* Cosmos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D1B1C0C323C794E600468E3F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B1C0C223C794E600468E3F /* SearchViewController.swift */; };
+		D1B1C0C623C7C1CC00468E3F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B1C0C523C7C1CC00468E3F /* CategoryViewController.swift */; };
 		D1C25F4F238C600B00048B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F4E238C600B00048B90 /* AppDelegate.swift */; };
 		D1C25F51238C600B00048B90 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C25F50238C600B00048B90 /* LoginViewController.swift */; };
 		D1C25F54238C600B00048B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C25F52238C600B00048B90 /* Main.storyboard */; };
@@ -78,6 +80,8 @@
 		D1B1C0B723BFBC0600468E3F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D1B1C0B923BFBD6D00468E3F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D1B1C0BB23C55D0A00468E3F /* Cosmos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cosmos.framework; path = Carthage/Build/iOS/Cosmos.framework; sourceTree = "<group>"; };
+		D1B1C0C223C794E600468E3F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D1B1C0C523C7C1CC00468E3F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D1C25F4B238C600B00048B90 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C25F4E238C600B00048B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C25F50238C600B00048B90 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,22 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		D1B1C0C123C794C800468E3F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D1B1C0C223C794E600468E3F /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D1B1C0C423C7C1AF00468E3F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D1B1C0C523C7C1CC00468E3F /* CategoryViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		D1C25F42238C600A00048B90 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +215,8 @@
 		D1C25F71238D93A700048B90 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D1B1C0C423C7C1AF00468E3F /* Category */,
+				D1B1C0C123C794C800468E3F /* Search */,
 				D1B1C0B623BFBBE800468E3F /* Detail */,
 				D1E7F3EA23A5A83F00929253 /* Cells */,
 				D1E7F3DC2395B9F500929253 /* Home */,
@@ -375,10 +397,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B1C0C623C7C1CC00468E3F /* CategoryViewController.swift in Sources */,
 				D1C25F84238EE3BB00048B90 /* Movie.swift in Sources */,
 				D1B1C0B823BFBC0600468E3F /* DetailViewController.swift in Sources */,
 				D1C25F75238D98B600048B90 /* LoginViewModel.swift in Sources */,
 				D1C25F51238C600B00048B90 /* LoginViewController.swift in Sources */,
+				D1B1C0C323C794E600468E3F /* SearchViewController.swift in Sources */,
 				D1FCF5DE238F333D00373ECA /* AuthService.swift in Sources */,
 				D1FCF5E2238F708600373ECA /* SignUpViewController.swift in Sources */,
 				D1E7F3DE2395BFA500929253 /* BaseViewController.swift in Sources */,
