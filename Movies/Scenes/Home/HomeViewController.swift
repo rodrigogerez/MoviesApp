@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var movieTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
-    var homeViewModel: HomeViewModel!
+    var homeViewModel: HomeViewModelProtocol!
     var movieId: Int!
     
     var movies: [Movie]! {
@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
     
     func fetchMoviesFromAPI(_ index: Int)
     {
-        homeViewModel = HomeViewModel(index)
+        homeViewModel = HomeViewModel(index, networkService: NetworkService())
         
         self.homeViewModel.fetchMovies(completion: { (mov) in
             DispatchQueue.main.async {

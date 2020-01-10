@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var ratingView: CosmosView!
     
-    var detailViewModel: DetailViewModel!
+    var detailViewModel: DetailViewModelProtocol!
     
     var movieId: Int! {
         didSet {

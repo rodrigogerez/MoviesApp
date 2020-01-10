@@ -39,8 +39,8 @@ class HomeViewModel: HomeViewModelProtocol {
 
     }
     
-    init(_ index: Int) {
-        self.networkService = NetworkService()
+    init(_ index: Int, networkService: NetworkService) {
+        self.networkService = networkService
         self.index = index
     }
 }

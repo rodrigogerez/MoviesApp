@@ -20,7 +20,7 @@ class SignUpViewController: BaseViewController {
     
     @IBOutlet weak var errorlabel: UILabel!
     
-    var signUpVM: SignUpViewModel!
+    var signUpVM: SignUpViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class SignUpViewController: BaseViewController {
                 return
             }
             
-            signUpVM = SignUpViewModel(username: username, password: password, name: name, email: email)
+            signUpVM = SignUpViewModel(username: username, password: password, name: name, email: email, authService: AuthService())
             
             let result = signUpVM.saveUserData()
             switch result {

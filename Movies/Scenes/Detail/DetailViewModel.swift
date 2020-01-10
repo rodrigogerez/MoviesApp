@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: DetailViewModelProtocol
 protocol DetailViewModelProtocol {
-    
+    func fetchMovieDetails(completion: @escaping (MovieDetail?) -> Void, errorHandler: @escaping (NetworkError) -> Void) 
 }
 
 //MARK: DetailViewModel
