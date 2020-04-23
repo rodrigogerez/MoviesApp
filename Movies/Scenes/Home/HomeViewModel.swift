@@ -15,7 +15,7 @@ protocol HomeViewModelProtocol {
 
 //MARK: HomeViewModel
 class HomeViewModel: HomeViewModelProtocol {
-    let networkService: NetworkService
+    let networkService: NetworkServiceProtocol
     var index: Int
     
     var movieRequest: MovieRequest {
@@ -39,8 +39,8 @@ class HomeViewModel: HomeViewModelProtocol {
 
     }
     
-    init(_ index: Int) {
-        self.networkService = NetworkService()
+    init(_ index: Int, networkService: NetworkService) {
+        self.networkService = networkService
         self.index = index
     }
 }

@@ -27,6 +27,7 @@ struct K {
         static let upcomingPath = "upcoming"
         static let popularPath = "popular"
         static let topRatedPath = "top_rated"
+        static let searchPath = "/search/movie"
     }
     
     struct ImageConstants {

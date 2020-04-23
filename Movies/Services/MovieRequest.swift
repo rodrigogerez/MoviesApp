@@ -13,12 +13,15 @@ enum MovieRequest {
     case popular
     case topRated
     case findById(Int)
+    case findByTitle(String)
     
     var parameters: [String: Any] {
         var params = ["api_key": K.NetworkConstants.apiKey]
         switch self {
             case .findById(_):
                 params["append_to_response"] = "videos,credits"
+            case .findByTitle(let title):
+                params["query"] = title
             default:
                 break
         }
@@ -35,6 +38,8 @@ enum MovieRequest {
                 return "\(K.NetworkConstants.baseMoviePath)\(K.NetworkConstants.topRatedPath)"
             case .findById(let id):
                 return "\(K.NetworkConstants.baseMoviePath)\(id)"
+            case .findByTitle:
+                return "\(K.NetworkConstants.searchPath)"
         }
     }
 }

@@ -10,12 +10,12 @@ import UIKit
 
 //MARK: DetailViewModelProtocol
 protocol DetailViewModelProtocol {
-    
+    func fetchMovieDetails(completion: @escaping (MovieDetail?) -> Void, errorHandler: @escaping (NetworkError) -> Void) 
 }
 
 //MARK: DetailViewModel
 class DetailViewModel: DetailViewModelProtocol {
-    let networkService: NetworkService
+    let networkService: NetworkServiceProtocol
     var id: Int
     
     func fetchMovieDetails(completion: @escaping (MovieDetail?) -> Void, errorHandler: @escaping (NetworkError) -> Void) {

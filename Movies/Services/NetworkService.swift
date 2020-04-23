@@ -12,6 +12,7 @@ import Alamofire
 protocol NetworkServiceProtocol {
     func fetchMovies(from movieRequest: MovieRequest, completion: @escaping (MoviesResponse) -> Void, errorHandler: @escaping (NetworkError) -> Void)
     func fetchMovieById(byId movieId: Int, completion: @escaping (MovieDetail) -> Void, errorHandler: @escaping (NetworkError) -> Void)
+    func fetchMoviesByTitle(byTitle movieTitle: String, completion: @escaping (MoviesResponse) -> Void, errorHandler: @escaping (NetworkError) -> Void)
 }
 
 enum NetworkError: Error {
@@ -75,5 +76,9 @@ class NetworkService: NetworkServiceProtocol {
     
     func fetchMovieById(byId movieId: Int, completion: @escaping (MovieDetail) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
         fetchData(from: MovieRequest.findById(movieId), completion: completion, errorHandler: errorHandler)
+    }
+    
+    func fetchMoviesByTitle(byTitle movieTitle: String, completion: @escaping (MoviesResponse) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
+        fetchData(from: MovieRequest.findByTitle(movieTitle), completion: completion, errorHandler: errorHandler)
     }
 }

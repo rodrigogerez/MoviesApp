@@ -24,7 +24,7 @@ class LoginViewModel: LoginViewModelProtocol {
     var username: String
     var password: String
     
-    let authService: AuthService
+    let authService: AuthServiceProtocol
     
     // Protocol functions
     func loginUser() -> Result<(), AuthError> {

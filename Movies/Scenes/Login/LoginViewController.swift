@@ -42,7 +42,7 @@ class LoginViewController: BaseViewController {
             let result = loginVM.loginUser()
             switch result {
                 case .success(()):
-                    NavigationService.changeRoot(withIdentifier: "navController")
+                    NavigationService.changeRoot(withIdentifier: "tabBarController")
                 case .failure(let error):
                     setErrorMessage(errorLabel: errorLabel, errorText: error.localizedDescription)
             }

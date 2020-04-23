@@ -1,20 +1,18 @@
 //
-//  HomeViewController.swift
+//  SearchViewController.swift
 //  Movies
 //
-//  Created by Rodrigo Gerez on 26/11/2019.
-//  Copyright © 2019 Rodrigo Gerez. All rights reserved.
+//  Created by Rodrigo Gerez on 09/01/2020.
+//  Copyright © 2020 Rodrigo Gerez. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
 
-class HomeViewController: UIViewController {
-    @IBOutlet weak var movieTypeSegmentedControl: UISegmentedControl!
+class SearchViewController: UIViewController {
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
-    var homeViewModel: HomeViewModelProtocol!
-    var movieId: Int!
+    var searchViewModel: SearchViewModelProtocol!
     
     var movies: [Movie]! {
         didSet
@@ -23,41 +21,36 @@ class HomeViewController: UIViewController {
         }
     }
     
-    var index: Int {
-        return movieTypeSegmentedControl.selectedSegmentIndex
-    }
+    var movieId: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        fetchMoviesFromAPI(self.index)
-    }
-    
-    // Set up all visual improvements
-    func setupUI() {
-        moviesCollectionView.dataSource = self
-        moviesCollectionView.delegate = self
-    }
-    
-    @IBAction func movieTypeChanged(_ sender: UISegmentedControl) {
-        fetchMoviesFromAPI(self.index)
-    }
-    
-    func fetchMoviesFromAPI(_ index: Int)
-    {
-        homeViewModel = HomeViewModel(index, networkService: NetworkService())
         
-        self.homeViewModel.fetchMovies(completion: { (mov) in
+        searchViewModel = SearchViewModel(networkService: NetworkService())
+    }
+    
+    @IBAction func searchTextChanged(_ sender: UITextField) {
+        if let textLength = sender.text?.count {
+            if textLength >= 3 {
+                fetchMoviesFromAPI()
+            }
+        }
+    }
+    
+    func fetchMoviesFromAPI() {
+        if let text = searchTextField.text {
+        searchViewModel.fetchMoviesByTitle(byTitle: text, completion: { (mov) in
             DispatchQueue.main.async {
                 self.movies = mov
             }
-        }) { (error) in
-            print(error.localizedDescription)
+            }) { (error) in
+                print(error.localizedDescription)
+            }
         }
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -80,10 +73,10 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate {
+extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         movieId = movies[indexPath.row].id
-        performSegue(withIdentifier: "goToDetails", sender: nil)
+        performSegue(withIdentifier: "goToDetailsFromSearch", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
