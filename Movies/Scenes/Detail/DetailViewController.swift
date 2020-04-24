@@ -15,21 +15,28 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var ratingView: CosmosView!
+
+    var movieDetails: MovieDetail! {
+        didSet {
+            self.titleLabel.text = movieDetails?.title
+            if let backdropPath = movieDetails?.backdropPath,
+               let url = URL(string: "\(K.ImageConstants.baseImageURL)\(backdropPath)") {
+                    movieImage.kf.setImage(with: url)
+            }
+            ratingView.rating = movieDetails?.voteAverage ?? 0
+            setSummaryLabelText(movieDetails?.overview)
+        }
+    }
     
     var detailViewModel: DetailViewModelProtocol!
     
     var movieId: Int! {
         didSet {
             detailViewModel = DetailViewModel(movieId)
-            detailViewModel.fetchMovieDetails(completion: { [weak self] movieDetail in
-                guard let self = self else { return; }
-                self.titleLabel.text = movieDetail?.title
-                if let url = URL(string: "\(K.ImageConstants.baseImageURL)\(movieDetail?.posterPath)") {
-                    //FIXME: Image is not showing up
-                    self.movieImage.kf.setImage(with: url)
-                }
-                self.ratingView.rating = movieDetail?.voteAverage ?? 0
-                self.setSummaryLabelText(movieDetail?.overview)
+            self.detailViewModel.fetchMovieDetails(completion: { movieDetail in
+                DispatchQueue.main.async {
+                    self.movieDetails = movieDetail
+                }                
             }, errorHandler: { error in
                 print(error.localizedDescription)
             })

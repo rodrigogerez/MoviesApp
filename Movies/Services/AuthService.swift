@@ -36,9 +36,9 @@ struct AuthService: AuthServiceProtocol {
     
     func loginWithResult(username: String, password: String) -> Result<(), AuthError> {
         let user = try! Realm().object(ofType: User.self, forPrimaryKey: username)
-        
+#if DEBUG
         return .success(())
-        
+#endif
         if let storedUser = user {
             if storedUser.password == password {
                 return .success(())
